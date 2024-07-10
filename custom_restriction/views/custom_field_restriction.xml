@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+  <record id="stock_request_order_custom_form" model="ir.ui.view">
+    <field name="name">view.stock.request.order.custom.form</field>
+    <field name="model">stock.request.order</field>
+    <field name="inherit_id" ref="stock_request.stock_request_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='location_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="stock_request_custom_form" model="ir.ui.view">
+    <field name="name">view.stock.request.custom.form</field>
+    <field name="model">stock.request</field>
+    <field name="inherit_id" ref="stock_request.view_stock_request_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='product_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='warehouse_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='warehouse_des_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='location_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='location_des_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='route_id']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='route_ids']" position="attributes">
+        <attribute name="options">{'no_create': True, 'no_open': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+        <attribute name="attrs">{'invisible': True}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='analytic_tag_ids']" position="attributes">
+        <attribute name="attrs">{'invisible': True}</attribute>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="stock_request_analytic_custom_form" model="ir.ui.view">
+    <field name="name">view.stock.request.analytic.custom.form</field>
+    <field name="model">stock.request</field>
+    <field name="inherit_id" ref="stock_request_analytic.view_stock_request_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='analytic_tag_ids']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="stock_picking_custom_form" model="ir.ui.view">
+    <field name="name">view.stock.picking.custom.form</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='partner_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='picking_type_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="purchase_order_custom_form" model="ir.ui.view">
+    <field name="name">view.purchase.order.custom.form</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='partner_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='requisition_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='currency_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//field[@name='order_line']/tree//field[@name='product_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+    </xpath>
+    </field>
+  </record>
+
+  <record id="account_move_custom_form" model="ir.ui.view">
+    <field name="name">view.move.custom.form</field>
+    <field name="model">account.move</field>
+    <field name="inherit_id" ref="account.view_move_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//group/group[@id='header_left_group']/field[@name='partner_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//group/group[@id='header_left_group']/field[@name='partner_bank_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='product_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='asset_category_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='analytic_account_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='analytic_tag_ids']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='product_uom_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='vehicle_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/tree/field[@name='account_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/tree/field[@name='vehicle_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/tree/field[@name='analytic_account_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+      <xpath expr="//page[@id='aml_tab']/field[@name='line_ids']/tree/field[@name='analytic_tag_ids']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="account_move_contract_helper_custom_form" model="ir.ui.view">
+    <field name="name">view.account.move.contract.helper.custom.form</field>
+    <field name="model">account.move</field>
+    <field name="inherit_id" ref="contract.view_account_move_contract_helper_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='contact_id']" position="attributes">
+        <attribute name="options">{'no_create': True}</attribute>
+        <attribute name="context">{'create': False, 'edit': False}</attribute>
+      </xpath>
+    </field>
+  </record>
+</odoo>
