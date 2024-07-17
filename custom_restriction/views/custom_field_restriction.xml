@@ -203,10 +203,10 @@
         <attribute name="options">{'no_create': True}</attribute>
         <attribute name="context">{'create': False, 'edit': False}</attribute>
       </xpath>
-      <xpath expr="//field[@name='contact_id']" position="attributes">
+      <!-- <xpath expr="//field[@name='contact_id']" position="attributes">
         <attribute name="options">{'no_create': True}</attribute>
         <attribute name="context">{'create': False, 'edit': False}</attribute>
-      </xpath>
+      </xpath> -->
     </field>
   </record>
 
