@@ -210,7 +210,7 @@
     </field>
   </record>
 
-  <record id="account_move_contract_helper_custom_form" model="ir.ui.view">
+  <!-- <record id="account_move_contract_helper_custom_form" model="ir.ui.view">
     <field name="name">view.account.move.contract.helper.custom.form</field>
     <field name="model">account.move</field>
     <field name="inherit_id" ref="contract.view_account_move_contract_helper_form"/>
@@ -220,7 +220,7 @@
         <attribute name="context">{'create': False, 'edit': False}</attribute>
       </xpath>
     </field>
-  </record>
+  </record> -->
 
   <record id="account_payment_custom_form" model="ir.ui.view">
     <field name="name">view.account.payment.custom.form</field>
